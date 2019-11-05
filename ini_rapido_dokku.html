@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+        
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="css/my_style.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa:700|Dancing+Script|Roboto&display=swap" rel="stylesheet">
+	<title>Pasos para Desplegar rápido una app en dokku</title>
+</head>
+<body>
+    <!-- ID Particles.js -->
+  <div id="particles-js"></div>
+	<div id="wrapper">
+   <div class="overlay"></div>
+    
+       <!-- Sidebar -->
+    <nav class="navbar navbar-inverse fixed-top" id="sidebar-wrapper" role="navigation">
+     <ul class="nav sidebar-nav">
+       <div class="sidebar-header">
+       <div class="sidebar-brand">
+         <a class="titulo"  href="#">Documentación Servidores Cloud</a></div></div>
+       <li><a href="index.html">Home</a></li>
+       <li class="dropdown">
+       <a href="#works" class="dropdown-toggle"  data-toggle="dropdown">Dokku <span class="caret"></span></a>
+      <ul class="dropdown-menu animated fadeInLeft" role="menu">
+      <div class="#dropdown-header">Desplegar Apps en Dokku </div>
+      <li><a href="ini_rapido_dokku.html">Pasos para Desplegar rápido una app en dokku</a></li>
+      <li><a href="requerimientos_dokku.html">Requerimientos Minimos</a></li>
+      <li><a href="creando_app.html">Creando Aplicaciones</a></li>
+      <li><a href="plugins_dokku.html">Instalando Plugins</a></li>
+      <li><a href="config_dokku.html">Configurando nombres de dominios</a></li>
+      <li><a href="var_entornos_dokku.html">Estableciendo variables de entornos</a></li>
+      <li><a href="config_enlace_dokku.html">Configurar y enlazar plugins</a></li>
+      <li><a href="config_avanzada_dokku.html">Configuracion avanzada</a></li>
+      <li><a href="obt_rootpass_dokku.html">Obtener Root Password de los contenedores de servicios</a></li>
+      <li><a href="camb_adap_bd_dokku.html">Cambiando el tipo de adaptador de base de datos</a></li>
+      <li><a href="alm_persistente_dokku.html">Almacenamiento Persistente</a></li>
+      <li><a href="conect_deploy_dokku.html">Conectandonos a dokku para hacer Deploy</a></li>
+      <li><a href="mant_dokku.html">Mantenimiento a los servicios dokku</a></li>
+      </ul>
+      </li>
+       <!-- digital oceans-->
+       <li><a href="digitalOceans.html">Digital Oceans</a></li>
+       <!-- azure-->
+       <li><a href="azure.html">Azure</a></li>
+       <!-- Google Cloud-->
+       <li><a href="gc.html">Google Cloud</a></li>
+       <!-- AWS-->
+       <li><a href="aws.html">Amazon Web Services</a></li>
+       <!-- QUIZ-->
+       <li><a href="quiz/dist/index.html">Quiz</a></li>
+      </ul>
+  </nav>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        
+
+        <div id="contenido page-content-wrapper">
+            <button type="button" class="hamburger animated fadeInLeft is-closed" data-toggle="offcanvas">
+                <span class="hamb-top"></span>
+    			<span class="hamb-middle"></span>
+				<span class="hamb-bottom"></span>
+            </button>
+            <div class="container presentacion">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <h1>Desplegar rápido una app en dokku</h1> 
+                             <h3>Pasos para Desplegar rápido una app en dokku:</h3>
+                             <div id="accordion">
+                                <div class="card"> 
+                                  <a class="card-link" data-toggle="collapse" href="#collapseUno">
+                                     <div class="card-header">    
+                                      1.   Creamos la app con el siguiente comando      
+                                     </div>
+                                    </a>
+                                  <div id="collapseUno" class="collapse show" data-parent="#accordion">
+                                    <div class="card-body">
+                                      dokku apps:create staging
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="card">
+                                  <a class="collapsed card-link" data-toggle="collapse" href="#collapseDos">
+                                  <div class="card-header">
+                                      2.   Creamos los contenedores o servicios que usara nuestra app
+                                  </div>
+                                  </a>
+                                  <div id="collapseDos" class="collapse" data-parent="#accordion">
+                                    <div class="card-body">
+                                      Dokku mysql:create stagingDB
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="card">
+                                  <a class="collapsed card-link" data-toggle="collapse" href="#collapseTres">
+                                  <div class="card-header">
+                                      3.   Establecemos las variables de entorno para nuestra app
+                                  </div>
+                                  </a>
+                                  <div id="collapseTres" class="collapse" data-parent="#accordion">
+                                    <div class="card-body">
+                                      Dokku config:set staging USERNAME=admin PASSWORD=1234
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="card">
+                                  <a class="collapsed card-link" data-toggle="collapse" href="#collapseCuatro">
+                                  <div class="card-header">
+                                      4.   Enlazaremos nuestros servicios a nuestra app
+                                 
+                                  </div>
+                                     </a>
+                                  <div id="collapseCuatro" class="collapse" data-parent="#accordion">
+                                    <div class="card-body">
+                                      Dokku mysql:link stagingDB staging
+                                    </div>
+                                  </div>
+                                </div>
+
+                                 <div class="card">
+                                  <a class="collapsed card-link" data-toggle="collapse" href="#collapseCinco">
+                                  <div class="card-header">
+                                      5.   Establecemos el dominio para la app
+                                   
+                                  </div>
+                                   </a>
+                                  <div id="collapseCinco" class="collapse" data-parent="#accordion">
+                                    <div class="card-body">
+                                      Dokku domain:add staging www.midominio.com dominio.com.ve
+                                    </div>
+                                  </div>
+                                </div>
+                               <div class="card">
+                                <a class="collapsed card-link" data-toggle="collapse" href="#collapseSeis">
+                                  <div class="card-header">
+                                      6.   Configuramos el almacenamiento persistente en caso de nuestra app necesite almacenar archivos dentro de los directorios del proyecto
+                                  </div>
+                                  </a>
+                                  <div id="collapseSeis" class="collapse" data-parent="#accordion">
+                                    <div class="card-body">
+                                      <h6>Creamos un directorio de almacenamiento en el servidor host
+                                      dokk</h6>
+                                      <h6>Luego le decimos a dokku que guardar los archivos en el directorio que acabas de crear:</h6>
+                                      <h6><strong>dokku docker-options:add appname run "-v /storage/<<!---->appname>/<<!---->environment>/public/uploads:/app/public/uploads”  </strong></h6>
+                                      <h6>Para finalizar debemos reconstruir la app para que tome los cambios de almacenamientos persistente:</h6>
+                                      <h6><strong>dokku ps:rebuild <<!---->app-name></strong></h6>
+                                    </div>
+                                  </div>
+                                </div>
+                               <div class="card">
+                                 <a class="collapsed card-link" data-toggle="collapse" href="#collapseSiete">
+                                  <div class="card-header">
+                                   
+                                       7.   Nos conectamos remotamente desde el ordenador para realizar deploy a nuestra app
+                                   
+                                  </div>
+                                   </a>
+                                  <div id="collapseSiete" class="collapse" data-parent="#accordion">
+                                    <div class="card-body">
+                                      <h6>Agregamos el repositorio remoto para hacer despliegue en el servidor dokku:</h6>
+                                      <h6><strong>git remote add <<!---->app-name> dokku@server-IP:<<!---->app-name></strong></h6>
+                                      <h6>Realiza un Push de rama master local a Dokku:</h6>
+                                      <h6><strong>git push <<!---->app-name> master</strong></h6>
+                                      <h6>También puedes realizar push desde otra rama local a dokku</h6>
+                                      <h6><strong>git push <<!---->app-name> <<!---->rama-local>:master</strong></h6>
+                                    </div>
+                                  </div>
+                                 </div>
+                              </div>
+
+                    </div>
+                </div>
+       
+    </div>
+  </div>
+    <!-- /#wrapper -->
+
+    <!--<footer> Slice-ZC-2019</footer>-->
+
+
+
+<!-- JS Particles.js -->
+    
+    <script src="js/particles.min.js"></script>
+    <script src="js/app.js"></script>
+   
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	 <script src="js/funciones.js"></script>
+</body>
+</html>	

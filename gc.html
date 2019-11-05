@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+        
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css"/>
+  <link rel="stylesheet" type="text/css" href="css/my_style.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa:700|Dancing+Script|Roboto&display=swap" rel="stylesheet">
+  <title>Google Cloud</title>
+</head>
+<body>
+    <!-- ID Particles.js -->
+  <div id="particles-js"></div>
+  <div id="wrapper">
+   <div class="overlay"></div>
+    
+          <!-- Sidebar -->
+    <nav class="navbar navbar-inverse fixed-top" id="sidebar-wrapper" role="navigation">
+     <ul class="nav sidebar-nav">
+       <div class="sidebar-header">
+       <div class="sidebar-brand">
+         <a class="titulo" href="#">Documentación Servidores Cloud</a></div></div>
+       <li><a href="index.html">Home</a></li>
+       <li class="dropdown">
+       <a href="#works" class="dropdown-toggle"  data-toggle="dropdown">Dokku <span class="caret"></span></a>
+      <ul class="dropdown-menu animated fadeInLeft" role="menu">
+      <div class="#dropdown-header">Desplegar Apps en Dokku </div>
+      <li><a href="ini_rapido_dokku.html">Pasos para Desplegar rápido una app en dokku</a></li>
+      <li><a href="requerimientos_dokku.html">Requerimientos Minimos</a></li>
+      <li><a href="creando_app.html">Creando Aplicaciones</a></li>
+      <li><a href="plugins_dokku.html">Instalando Plugins</a></li>
+      <li><a href="config_dokku.html">Configurando nombres de dominios</a></li>
+      <li><a href="var_entornos_dokku.html">Estableciendo variables de entornos</a></li>
+      <li><a href="config_enlace_dokku.html">Configurar y enlazar plugins</a></li>
+      <li><a href="config_avanzada_dokku.html">Configuracion avanzada</a></li>
+      <li><a href="obt_rootpass_dokku.html">Obtener Root Password de los contenedores de servicios</a></li>
+      <li><a href="camb_adap_bd_dokku.html">Cambiando el tipo de adaptador de base de datos</a></li>
+      <li><a href="alm_persistente_dokku.html">Almacenamiento Persistente</a></li>
+      <li><a href="conect_deploy_dokku.html">Conectandonos a dokku para hacer Deploy</a></li>
+      <li><a href="mant_dokku.html">Mantenimiento a los servicios dokku</a></li>
+      </ul>
+      </li>
+       <!-- digital oceans-->
+       <li><a href="digitalOceans.html">Digital Oceans</a></li>
+       <!-- azure-->
+       <li><a href="azure.html">Azure</a></li>
+       <!-- Google Cloud-->
+       <li><a href="gc.html">Google Cloud</a></li>
+       <!-- AWS-->
+       <li><a href="aws.html">Amazon Web Services</a></li>
+       <!-- QUIZ-->
+       <li><a href="quiz/dist/index.html">Quiz</a></li>
+      </ul>
+  </nav>
+        <!-- /#sidebar-wrapper -->
+        <!-- Page Content -->
+        
+
+        <div id="contenido page-content-wrapper">
+            <button type="button" class="hamburger animated fadeInLeft is-closed" data-toggle="offcanvas">
+                <span class="hamb-top"></span>
+          <span class="hamb-middle"></span>
+        <span class="hamb-bottom"></span>
+            </button>
+            <div class="container presentacion">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 ">
+                        <h1>Google Cloud</h1> 
+                        <h2><strong>SERVIDORES CLOUD</strong></h2>
+                        <p>servidores vituales privados.</p>
+                        <h6> Implementar un Contenedor de Muestra Preconstruido</h6>
+                        
+
+                        <div id="accordion">
+                                <div class="card"> 
+                                  <a class="card-link" data-toggle="collapse" href="#collapseUno">
+                                     <div class="card-header">    
+                                     1. Inicie sesión en su cuenta de Google Cloud     
+                                     </div>
+                                    </a>
+                                  <div id="collapseUno" class="collapse show" data-parent="#accordion">
+                                    <div class="card-body">
+                                       Crear una cuenta en <a href="https://cloud.google.com/">https://cloud.google.com/</a>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="card">
+                                  <a class="collapsed card-link" data-toggle="collapse" href="#collapseDos">
+                                  <div class="card-header">
+                                      2.   Seleccione o cree un proyecto GCP
+                                  </div>
+                                  </a>
+                                  <div id="collapseDos" class="collapse" data-parent="#accordion">
+                                    <div class="card-body">
+                                      Tiene la opcion de crear o utilizar un proyecto anteriormente desarrollado
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="card">
+                                  <a class="collapsed card-link" data-toggle="collapse" href="#collapseTres">
+                                  <div class="card-header">
+                                     3. Asegúrese de que la facturación esté habilitada para su proyecto de Google Cloud Platform .
+                                  </div>
+                                  </a>
+                                  <div id="collapseTres" class="collapse" data-parent="#accordion">
+                                    <div class="card-body">
+                                      <a href="https://cloud.google.com/billing/docs/how-to/modify-project"> Aprenda a habilitar la facturación</a>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="card">
+                                  <a class="collapsed card-link" data-toggle="collapse" href="#collapseCuatro">
+                                  <div class="card-header">
+                                      4.   Despliegue del contenedor de muestra
+                                 
+                                  </div>
+                                     </a>
+                                  <div id="collapseCuatro" class="collapse" data-parent="#accordion">
+                                    <div class="card-body">
+                                      <h6>4.1) Dirigete a <a href="https://console.cloud.google.com/run?enableapi=true&_ga=2.126782925.-1384074752.1570734007&project=inspired-terra-256819&folder=&organizationId=">cloud run</a> </h6>
+                                      <h6>4.2) Haga clic en Crear servicio para mostrar el formulario Crear servicio .</h6>
+                                      <img id="imagengc" src="img/cloudrun.png">
+                                      <h6>En la forma</h6>
+                                      <h6>a- Úselo gcr.io/cloudrun/hellocomo una imagen de contenedor.</h6>
+                                      <h6>b- Seleccione Cloud Run (totalmente administrado) como su plataforma de desarrollo.</h6>
+                                      <h6>c- Seleccione la región donde desea ubicar su servicio.</h6>
+                                      <h6>d- Seleccione Permitir invocaciones no autenticadas para poder abrir el resultado en su navegador web</h6>
+                                      <h6>e- Haga clic en Crear para implementar la imagen en Cloud Run y ​​espere a que finalice la implementación.</h6>
+                                      <h6>f- Haga clic en el enlace URL que se muestra para ejecutar el contenedor desplegado.</h6>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                
+                              
+                               
+                              </div>
+
+                          
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+<!-- JS Particles.js -->
+    
+    <script src="js/particles.min.js"></script>
+    <script src="js/app.js"></script>
+   
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+   <script src="js/funciones.js"></script>
+</body>
+</html> 

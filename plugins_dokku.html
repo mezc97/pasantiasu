@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html>
+<head>
+        
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="css/my_style.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa:700|Dancing+Script|Roboto&display=swap" rel="stylesheet">
+	<title>Plugins</title>
+</head>
+<body>
+    <!-- ID Particles.js -->
+  <div id="particles-js"></div>
+	<div id="wrapper">
+   <div class="overlay"></div>
+    
+      <!-- Sidebar -->
+    <nav class="navbar navbar-inverse fixed-top" id="sidebar-wrapper" role="navigation">
+     <ul class="nav sidebar-nav">
+       <div class="sidebar-header">
+       <div class="sidebar-brand">
+         <a class="titulo"  href="#">Documentación Servidores Cloud</a></div></div>
+       <li><a href="index.html">Home</a></li>
+       <li class="dropdown">
+       <a href="#works" class="dropdown-toggle"  data-toggle="dropdown">Dokku <span class="caret"></span></a>
+      <ul class="dropdown-menu animated fadeInLeft" role="menu">
+      <div class="#dropdown-header">Desplegar Apps en Dokku </div>
+      <li><a href="ini_rapido_dokku.html">Pasos para Desplegar rápido una app en dokku</a></li>
+      <li><a href="requerimientos_dokku.html">Requerimientos Minimos</a></li>
+      <li><a href="creando_app.html">Creando Aplicaciones</a></li>
+      <li><a href="plugins_dokku.html">Instalando Plugins</a></li>
+      <li><a href="config_dokku.html">Configurando nombres de dominios</a></li>
+      <li><a href="var_entornos_dokku.html">Estableciendo variables de entornos</a></li>
+      <li><a href="config_enlace_dokku.html">Configurar y enlazar plugins</a></li>
+      <li><a href="config_avanzada_dokku.html">Configuracion avanzada</a></li>
+      <li><a href="obt_rootpass_dokku.html">Obtener Root Password de los contenedores de servicios</a></li>
+      <li><a href="camb_adap_bd_dokku.html">Cambiando el tipo de adaptador de base de datos</a></li>
+      <li><a href="alm_persistente_dokku.html">Almacenamiento Persistente</a></li>
+      <li><a href="conect_deploy_dokku.html">Conectandonos a dokku para hacer Deploy</a></li>
+      <li><a href="mant_dokku.html">Mantenimiento a los servicios dokku</a></li>
+      <!-- QUIZ-->
+      <li><a href="quiz.html">Quiz</a></li>
+      </ul>
+      </li>
+       <!-- digital oceans-->
+       <li><a href="digitalOceans.html">Digital Oceans</a></li>
+       <!-- azure-->
+       <li><a href="azure.html">Azure</a></li>
+       <!-- Google Cloud-->
+       <li><a href="gc.html">Google Cloud</a></li>
+       <!-- AWS-->
+       <li><a href="aws.html">Amazon Web Services</a></li>
+       <!-- QUIZ-->
+       <li><a href="quiz/dist/index.html">Quiz</a></li>
+      </ul>
+
+  </nav>
+        <!-- /#sidebar-wrapper -->
+        <!-- Page Content -->
+        
+
+        <div id="contenido page-content-wrapper">
+            <button type="button" class="hamburger animated fadeInLeft is-closed" data-toggle="offcanvas">
+                <span class="hamb-top"></span>
+    			<span class="hamb-middle"></span>
+				<span class="hamb-bottom"></span>
+            </button>
+            <div class="container presentacion">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <h1>Instalando Plugins</h1> 
+                        <h6>Dokku permite instalar plugins para conectarlos a nuestras aplicaciones, tales como base de datos, servicios, etc. En base a los servicios que use nuestro proyecto o app debemos instalar los plugins adecuados para que funcione correctamente. Entre lo más conocidos tenemos MySQL, Postgres, Elasticsearch, Redis, etc</h6>
+
+                        <h6>Para instalar plugins consultamos las instrucciones para cada plugin en específico. Por ejemplo visitamos el plugin de MySQL, leemos sus instrucciones de instalación en la cual debemos ejecutar con permisos root el siguiente comando:</h6>
+                        <div class="card">
+                                <div class="card-body"> 
+                                  
+                                  <h6>sudo dokku plugin:install https://github.com/dokku/dokku-mysql.git mysql</h6>
+                                </div>
+                        </div>
+                        <h6>Dokku “plugins” igualmente es un módulo de dokku donde podemos ejecutar diferentes acciones a nuestros plugins.</h6>
+                        <div id="accordion">
+                          <div class="card">
+                            <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                            <div class="card-header">
+                      
+                                Muestra una lista de los plugins activos
+                             
+                            </div>
+                             </a>
+                            <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                              <div class="card-body">
+                                dokku plugin
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card">
+                             <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+                            <div class="card-header">
+                             
+                                Desinstala un plugin 
+                              
+                            </div>
+                            </a>
+                            <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                              <div class="card-body">
+                                dokku plugin:uninstall postgres
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card">
+                          <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+                            <div class="card-header">
+                                Deshabilita un plugin instalado
+                             
+                            </div>
+                             </a>
+                            <div id="collapseThree" class="collapse" data-parent="#accordion">
+                              <div class="card-body">
+                                dokku plugin:disable postgres
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card">
+                          <a class="collapsed card-link" data-toggle="collapse" href="#collapseCuatro">
+                            <div class="card-header">
+                                Habilita un plugin previamente deshabilitado 
+                            </div>
+                          </a>
+
+                            <div id="collapseCuatro" class="collapse" data-parent="#accordion">
+                              <div class="card-body">
+                                dokku plugin:enable postgres 
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card">
+                          <a class="collapsed card-link" data-toggle="collapse" href="#collapseCinco">
+
+                            <div class="card-header">
+                                Actualiza el plugin desde su repositorio
+                            </div>
+                              </a>
+                            
+                            <div id="collapseCinco" class="collapse" data-parent="#accordion">
+                              <div class="card-body">
+                                dokku plugin:update postgres 
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                                              
+
+                        <h2>Plugins</h2>
+                          <p>A continuación se muestra una lista de plugins de utilidad en desarrollo utilizando el entorno Dokku:</p>            
+                          <table class="table table-hover">
+                            <thead>
+                              <tr>
+                                <th>Plugin</th>
+                                <th>Author</th>
+                                <th>Compatibility</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td><a href="https://github.com/dokku/dokku-couchdb">CouchDB (beta)</a></td>
+                                <td>dokku</td>
+                                <td>0.4.0+</td>
+                              </tr>
+                              <tr>
+                                <td><a href="https://github.com/dokku/dokku-elasticsearch">Elasticsearch (beta)</a></td>
+                                <td>dokku</td>
+                                <td>0.4.0+</td>
+                              </tr>
+                              <tr>
+                                <td><a href="https://github.com/dokku/dokku-graphite">Grafana/Graphite/Statsd (beta)</a></td>
+                                <td>dokku</td>
+                                <td>0.4.0+</td>
+                              </tr>
+                              <tr>
+                                <td><a href="https://github.com/dokku/dokku-mariadb-plugin">MariaDB (beta)</a></td>
+                                <td>dokku</td>
+                                <td>0.4.0+</td>
+                              </tr>
+                              <tr>
+                                <td><a href="https://github.com/dokku/dokku-memcached-plugin">Memcached (beta)</a></td>
+                                <td>dokku</td>
+                                <td>0.4.0+</td>
+                              </tr>
+                              <tr>
+                                <td><a href="https://github.com/dokku/dokku-mongo-plugin">Mongo (beta)</a></td>
+                                <td>dokku</td>
+                                <td>0.4.0+</td>
+                              </tr>
+                              <tr>
+                                <td><a href="https://github.com/dokku/dokku-mysql-plugin">MySQL (beta)</a></td>
+                                <td>dokku</td>
+                                <td>0.4.0+</td>
+                              </tr>
+                              <tr>
+                                <td><a href="https://github.com/dokku/dokku-natss">Nats (beta)</a></td>
+                                <td>dokku</td>
+                                <td>0.4.0+</td>
+                              </tr>
+                              <tr>
+                                <td><a href="https://github.com/dokku/dokku-postgres-plugin">Postgres (beta)</a></td>
+                                <td>dokku</td>
+                                <td>0.4.0+</td>
+                              </tr>
+                              <tr>
+                                <td><a href="https://github.com/dokku/dokku-rabbitmq-plugin">RabbitMQ (beta)</a></td>
+                                <td>dokku</td>
+                                <td>0.4.0+</td>
+                              </tr>
+                              <tr>
+                                <td><a href="https://github.com/dokku/dokku-redis-plugin">Redis (beta)</a></td>
+                                <td>dokku</td>
+                                <td>0.4.0+</td>
+                              </tr>
+                              <tr>
+                                <td><a href="https://github.com/dokku/dokku-rethinkdb-plugin">RethinkDB (beta)</a></td>
+                                <td>dokku</td>
+                                <td>0.4.0+</td>
+                              </tr>
+                              <tr>
+                                <td><a href="https://github.com/dokku/dokku-copyfiles-to-image">Copy Files to Image</a></td>
+                                <td>dokku</td>
+                                <td>0.4.0+</td>
+                              </tr>
+                              <tr>
+                                <td><a href="https://github.com/dokku/dokku-http-auth">HTTP Auth (beta)</a></td>
+                                <td>dokku</td>
+                                <td>0.4.0+</td>
+                              </tr>
+                              <tr>
+                                <td><a href="https://github.com/dokku/dokku-letsencrypt">Let's Encrypt (beta)</a></td>
+                                <td>dokku</td>
+                                <td>0.4.0+</td>
+                              </tr>
+                              <tr>
+                                <td><a href="https://github.com/dokku/dokku-maintenance">Maintenance mode (beta)</a></td>
+                                <td>dokku</td>
+                                <td>0.4.0+</td>
+                              </tr>
+                              <tr>
+                                <td><a href="https://github.com/dokku/dokku-redirect">Redirect (beta)</a></td>
+                                <td>dokku</td>
+                                <td>0.4.0+</td>
+                              </tr>
+                            </tbody>
+                          </table>
+
+                          <!--almacenes de datos relacional-->
+
+                        <h2>Almacenes de datos relacional</h2>
+                                  
+                          <table class="table table-hover">
+                            <thead>
+                              <tr>
+                                <th>Plugin</th>
+                                <th>Author</th>
+                                <th>Compatibility</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td><a href="https://github.com/Kloadut/dokku-md-plugin">MariaDB</a></td>
+                                <td>Kloadut</td>
+                                <td>0.3.x</td>
+                              </tr>
+                              <tr>
+                                <td><a href="https://github.com/ohardy/dokku-mariadb">MariaDB (single container)</a></td>
+                                <td>ohardy</td>
+                                <td>0.3.x</td>
+                              </tr>
+                              <tr>
+                                <td><a href="https://github.com/krisrang/dokku-mariadb">MariaDB (single container)</a></td>
+                                <td>krisrang</td>
+                                <td>0.3.26+</td>
+                              </tr>
+                              <tr>
+                                <td><a href="https://github.com/jlachowski/dokku-pg-plugin">PostgreSQL</a></td>
+                                <td>jlachowski</td>
+                                <td>0.3.x</td>
+                              </tr>
+                              <tr>
+                                <td><a href="https://github.com/ohardy/dokku-psql">PostgreSQL (single container)</a></td>
+                                <td>ohardy</td>
+                                <td>0.3.x</td>
+                              </tr>
+                              <tr>
+                                <td><a href="https://github.com/Flink/dokku-psql-single-container">PostgreSQL (single container)</a></td>
+                                <td>Flink</td>
+                                <td>0.3.26+</td>
+                              </tr>
+                            </tbody>
+                          </table>
+
+                            <!--Almacenamiento en caché-->
+
+                        <h2>Almacenamiento en caché</h2>
+                                  
+                          <table class="table table-hover">
+                            <thead>
+                              <tr>
+                                <th>Plugin</th>
+                                <th>Author</th>
+                                <th>Compatibility</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td><a href="https://github.com/Aluxian/dokku-nginx-cache">Caché Nginx</a></td>
+                                <td>Aluxiano</td>
+                                <td>0.5.0+</td>
+                              </tr>
+                              <tr>
+                                <td><a href="https://github.com/ohardy/dokku-redis">Redis (contenedor único)</a></td>
+                                <td>ohardy</td>
+                                <td>0.3.x</td>
+                              </tr>
+                              <tr>
+                                <td><a href="https://github.com/Zenedith/dokku-varnish-plugin">Barniz</a></td>
+                                <td>Zenedith</td>
+                                <td>Caché de barniz entre nginx y la aplicación con configuración base</td>
+                              </tr>
+                            </tbody>
+                          </table>
+
+                          <!--Queuing-->
+
+                        <h2>Queuing</h2>
+                                  
+                          <table class="table table-hover">
+                            <thead>
+                              <tr>
+                                <th>Plugin</th>
+                                <th>Author</th>
+                                <th>Compatibility</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td><a href="https://github.com/jlachowski/dokku-rabbitmq-plugin">RabbitMQ</a></td>
+                                <td>jlachowski</td>
+                                <td>0.3.x</td>
+                              </tr>
+                              <tr>
+                                <td><a href="https://github.com/ohardy/dokku-redis">RabbitMQ (single container)</a></td>
+                                <td>jlachowski</td>
+                                <td>0.3.x</td>
+                              </tr>
+                              <tr>
+                                <td><a href="https://github.com/cu12/dokku-elasticmq">ElasticMQ (SQS compatible)</a></td>
+                                <td>cu12</td>
+                                <td>0.5.0+</td>
+                              </tr>
+                              <tr>
+                                <td><a href="https://github.com/SpinifexGroup/dokku-vernemq">VerneMQ (MQTT Broker)</a></td>
+                                <td>mrname</td>
+                                <td>0.4.0+</td>
+                              </tr>
+                            </tbody>
+                          </table>
+
+                         <!--otro-->
+
+                        <h2>Otros</h2>
+                                  
+                          <table class="table table-hover">
+                            <thead>
+                              <tr>
+                                <th>Plugin</th>
+                                <th>Author</th>
+                                <th>Compatibility</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td><a href="https://github.com/basgys/dokku-etcd">etcd</a></td>
+                                <td>basgys</td>
+                                <td>0.4.x</td>
+                              </tr>
+                              <tr>
+                                <td><a href="https://github.com/cu12/dokku-fake_sns">FakeSNS</a></td>
+                                <td>cu12</td>
+                                <td>0.5.0+</td>
+                              </tr>
+                              <tr>
+                                <td><a href="https://github.com/basgys/dokku-influxdb">InfluxDB</a></td>
+                                <td>basgys</td>
+                                <td>0.4.x</td>
+                              </tr>
+                              <tr>
+                                <td><a href="https://github.com/stuartpb/dokku-rethinkdb-plugin">RethinkDB</a></td>
+                                <td>stuartpb</td>
+                                <td>0.3.x</td>
+                              </tr>
+                              <tr>
+                                <td><a href="https://github.com/lazyatom/dokku-chrome">Headless Chrome</a></td>
+                                <td>lazyatom</td>
+                                <td>0.8.1+</td>
+                              </tr>
+                            </tbody>
+                          </table>
+
+
+                          <!--Complementos que implementan la nueva funcionalidad de Dokku-->
+
+
+                        <h3>Complementos que implementan la nueva funcionalidad de Dokku</h3>
+                        <table class="table table-hover">
+                        <thead>
+                        <tr>
+                        <th>Plugin</th>
+                        <th>Author</th>
+                        <th>Compatibility</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                           <td><a href="https://github.com/cjblomqvist/dokku-app-name-env">App name as env</a></td>
+                            <td>cjblomqvist</td>
+                            <td>0.3.x</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/josegonzalez/dokku-docker-direct">Docker Direct</a></td>
+                            <td>josegonzalez</td>
+                            <td>0.4.0+</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/crisward/dokku-clone">Dokku Clone</a></td>
+                            <td>crisward</td>
+                            <td>0.4.0+</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/josegonzalez/dokku-supply-config">Dokku Copy App Config Files</a></td>
+                            <td>josegonzalez</td>
+                            <td>0.4.0+</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/mimischi/dokku-dockerfile">Dockerfile custom path</a></td>
+                            <td>mimischi</td>
+                            <td>0.8.0+</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/agco-adm/dokku-registry">Dokku Registry</a><sup>1</sup></td>
+                            <td>agco-adm</td>
+                            <td>0.4.0+</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/crisward/dokku-require">Dokku Require</a><sup>2</sup></td>
+                            <td>crisward</td>
+                            <td>0.4.0+</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/josegonzalez/dokku-global-cert">Global Certificates</a></td>
+                            <td>josegonzalez</td>
+                            <td>0.5.0+</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/glassechidna/dokku-graduate">Graduate (Environment Management)</a></td>
+                            <td>Benjamin-Dobell</td>
+                            <td>0.4.0+</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/256dpi/dokku-haproxy">Haproxy tcp load balancer</a></td>
+                            <td>256dpi</td>
+                            <td>0.4.0+</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/michaelshobbs/dokku-hostname">Hostname</a></td>
+                            <td>michaelshobbs</td>
+                            <td>0.4.0+</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/matto1990/dokku-secure-apps">HTTP Auth Secure Apps</a></td>
+                            <td>matto1990</td>
+                            <td>0.4.0+</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/mbreit/dokku-monit">Monit (Health Checks)</a></td>
+                            <td>mbreit</td>
+                            <td>0.8.0+</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/josegonzalez/dokku-nuke">Nuke Containers</a></td>
+                            <td>josegonzalez</td>
+                            <td>0.4.0+</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/josegonzalez/dokku-ports">Open App Ports</a></td>
+                            <td>josegonzalez</td>
+                            <td>0.3.x</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/michaelshobbs/dokku-proctype-filter">Proctype Filter</a></td>
+                            <td>michaelshobbs</td>
+                            <td>0.4.0+</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://notabug.org/candlewaster/dokku-robots.txt" rel="nofollow">robots.txt</a></td>
+                            <td>candlewaster</td>
+                            <td>0.4.x</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/cedricziel/dokku-deployment-keys">SSH Deployment Keys</a><sup>3</sup></td>
+                            <td>cedricziel</td>
+                            <td>0.4.0+</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/cedricziel/dokku-hostkeys-plugin">SSH Hostkeys</a><sup>4</sup></td>
+                            <td><a href="https://github.com/cedricziel">cedricziel</a></td>
+                            <td>0.3.x</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/fteychene/dokku-build-hook">Application build hook</a></td>
+                            <td>fteychene</td>
+                            <td>0.4.0+</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/baikunz/dokku-post-deploy-script">Post Deploy Script</a></td>
+                            <td>baikunz</td>
+                            <td>0.4.0+</td>
+                          </tr>
+                        </tbody>
+                        </table>
+
+
+                        <h3>Otros Plugins</h3>
+                        <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>Plugin</th>
+                            <th>Author</th>
+                            <th>Compatibility</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><a href="https://github.com/Flink/dokku-airbrake-deploy">Airbrake deploy</a></td>
+                            <td>Flink</td>
+                            <td>0.4.0+</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/F4-Group/dokku-apt">APT</a></td>
+                            <td>F4-Group</td>
+                            <td>0.4.0+</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/alexanderbeletsky/dokku-bower-install">Bower install</a></td>
+                            <td>alexanderbeletsky</td>
+                            <td>0.3.x</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/thrashr888/dokku-bower-grunt-build-plugin">Bower/Grunt</a></td>
+                            <td>thrashr888</td>
+                            <td>0.3.x</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/gdi2290/dokku-bower-gulp-build-plugin">Bower/Gulp</a></td>
+                            <td>gdi2290</td>
+                            <td>0.3.x</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/jagandecapri/dokku-bower-gulp-build-plugin">Bower/Gulp</a></td>
+                            <td>jagandecapri</td>
+                            <td>0.3.x</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/ignlg/dokku-builders-plugin">Builders: bower, compass, gulp, grunt</a></td>
+                            <td>ignlg</td>
+                            <td>0.4.0+</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/nickcharlton/dokku-cookbook">Chef cookbook</a></td>
+                            <td>nickcharlton</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/Flink/dokku-docker-auto-volumes">Docker auto persist volumes</a></td>
+                            <td>Flink</td>
+                            <td>0.4.0+</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/michaelshobbs/dokku-hostname">Hostname</a></td>
+                            <td>michaelshobbs</td>
+                            <td>0.4.0+</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/sarendsen/dokku-limit">Limit (Resource management)</a></td>
+                            <td>sarendsen</td>
+                            <td>0.9.0+</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/michaelshobbs/dokku-logspout">Logspout</a></td>
+                            <td>michaelshobbs</td>
+                            <td>0.4.0+</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/michaelshobbs/dokku-syslog">Syslog</a></td>
+                            <td>michaelshobbs</td>
+                            <td>0.10.4+</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/investtools/dokku-long-timeout-plugin">Long Timeout</a></td>
+                            <td>investtools</td>
+                            <td>0.4.0+</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/cjblomqvist/dokku-monit">Monit</a></td>
+                            <td>cjblomqvist</td>
+                            <td>0.3.x</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/iamale/dokku-monorepo">Monorepo</a></td>
+                            <td>iamale</td>
+                            <td>0.4.0+</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/artofrawr/dokku-multi-dockerfile">Multi Dockerfile</a></td>
+                            <td>artofrawr</td>
+                            <td>0.4.0+</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/ademuk/dokku-nodejs">Node</a></td>
+                            <td>ademuk</td>
+                            <td>0.3.x</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/pnegahdar/dokku-node">Node</a></td>
+                            <td>pnegahdar</td>
+                            <td>0.3.x</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/iloveitaly/dokku-rollbar">Rollbar</a></td>
+                            <td>iloveitaly</td>
+                            <td>0.5.0+</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/ribot/dokku-slack">Slack Notifications</a></td>
+                            <td>ribot</td>
+                            <td>0.4.0+</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/m0rth1um/dokku-telegram">Telegram Notifications</a></td>
+                            <td>m0rth1um</td>
+                            <td>0.4.0+</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/michaelshobbs/dokku-tor">Tor</a></td>
+                            <td>michaelshobbs</td>
+                            <td>0.4.0+</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/dokku-community/dokku-acl">User ACL</a></td>
+                            <td>Maciej Łebkowski</td>
+                            <td>0.4.0+</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/nickstenning/dokku-webhooks">Webhooks</a></td>
+                            <td>nickstenning</td>
+                            <td>0.3.x</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/mbriskar/dokku-wkhtmltopdf">Wkhtmltopdf</a></td>
+                            <td>mbriskar</td>
+                            <td>0.4.0+</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/dokku-community/dokku-wordpress">Dokku Wordpress</a></td>
+                            <td>dokku-community</td>
+                            <td>0.4.0+</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/mainto/dokku-access">Access</a></td>
+                            <td>mainto</td>
+                            <td>0.4.0+</td>
+                          </tr>
+                        </tbody>
+                        </table>
+
+                        <h3>Complementos obsoletos</h3>
+                        <p>Los siguientes complementos se han eliminado ya que su funcionalidad ahora está en Dokku Core.</p>
+                        <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>Plugin</th>
+                            <th>Author</th>
+                            <th>In Dokku Since</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><a href="https://github.com/michaelshobbs/dokku-app-user">App User</a></td>
+                            <td>michaelshobbs</td>
+                            <td>v0.7.1 (herokuish 0.3.18)</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/neam/dokku-custom-domains">Custom Domains</a></td>
+                            <td>motin</td>
+                            <td>v0.3.10 (domains plugin)</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/josegonzalez/dokku-debug">Debug</a></td>
+                            <td>josegonzalez</td>
+                            <td>v0.3.9 (trace command)</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/dyson/dokku-docker-options">Docker Options</a></td>
+                            <td>dyson</td>
+                            <td>v0.3.17 (docker-options plugin)</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/alex-sherwin/dokku-name">Dokku Name</a></td>
+                            <td>alex-sherwin</td>
+                            <td>v0.4.2 (named containers plugin)</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/alessio/dokku-events">Events Logger</a></td>
+                            <td>alessio</td>
+                            <td>v0.3.21 (events plugin)</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/dokku-community/dokku-git-rev">git rev-parse HEAD in env</a></td>
+                            <td>cjblomqvist</td>
+                            <td>v0.12.0 (enhanced core git plugin)</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/stuartpb/dokku-bind-port">Host Port binding</a></td>
+                            <td>stuartpb</td>
+                            <td>v0.3.17 (docker-options plugin)</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/rlaneve/dokku-link">Link Containers</a></td>
+                            <td>rlaneve</td>
+                            <td>v0.3.17 (docker-options plugin)</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/josegonzalez/dokku-list">List Containers</a></td>
+                            <td>josegonzalez</td>
+                            <td>v0.3.14 (ps plugin)</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/pauldub/dokku-multi-buildpack">Multi-Buildpack</a></td>
+                            <td>pauldub</td>
+                            <td>v0.4.0 (herokuish)</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/wmluke/dokku-domains-plugin">Multiple Domains</a><sup>1</sup></td>
+                            <td>wmluke</td>
+                            <td>v0.3.10 (domains plugin)</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/Flink/dokku-named-containers">Named-containers</a></td>
+                            <td>Flink</td>
+                            <td>v0.4.2 (named-containers plugin)</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/mikexstudios/dokku-nginx-alt">Nginx-Alt</a></td>
+                            <td>mikexstudios</td>
+                            <td>v0.3.10 (domains plugin)</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/dyson/dokku-persistent-storage">Persistent Storage</a></td>
+                            <td>dyson</td>
+                            <td>v0.3.17 (docker-options plugin)</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/michaelshobbs/dokku-app-predeploy-tasks">Pre-Deploy Tasks</a></td>
+                            <td>michaelshobbs</td>
+                            <td>v0.5.0 (deployment tasks)</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/darkpixel/dokku-prime-cache">PrimeCache</a></td>
+                            <td>darkpixel</td>
+                            <td>v0.3.0 (zero downtime deploys)</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/apmorton/dokku-circus">Process Manager: Circus</a></td>
+                            <td>apmorton</td>
+                            <td>v0.3.14/0.7.0 (ps/restart policy plugin)</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/Flink/dokku-forego">Process Manager: Forego</a></td>
+                            <td>Flink</td>
+                            <td>v0.3.14/0.7.0 (ps plugin)</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/iskandar/dokku-forego">Process Manager: Forego</a></td>
+                            <td>iskandar</td>
+                            <td>v0.3.14/0.7.0 (ps plugin)</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/sehrope/dokku-logging-supervisord">Process Manager: Logging Supervisord</a></td>
+                            <td>sehrope</td>
+                            <td>v0.3.14/0.7.0 (ps plugin)</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/statianzo/dokku-shoreman">Process Manager: Shoreman </a></td>
+                            <td>statianzo</td>
+                            <td>v0.3.14/0.7.0 (ps plugin)</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/statianzo/dokku-supervisord">Process Manager: Supervisord</a></td>
+                            <td>statianzo</td>
+                            <td>v0.3.14/0.7.0 (ps plugin)</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/scottatron/dokku-rebuild">Rebuild application</a></td>
+                            <td>scottatron</td>
+                            <td>v0.3.14 (ps plugin)</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/mixxorz/dokku-docker-reset-mtime">Reset mtime</a></td>
+                            <td>mixxorz</td>
+                            <td>Docker 1.8+</td>
+                          </tr>
+                          <tr>
+                            <td>
+                            <a href="https://github.com/cameron-martin/dokku-build-env">Supply env vars to buildpacks</a><sup>2</sup>
+                            </td>
+                            <td>cameron-martin</td>
+                            <td>v0.3.9 (build-env plugin)</td>
+                          </tr>
+                          <tr>
+                            <td>
+                            <a href="https://github.com/motin/dokku-user-env-compile">user-env-compile</a><sup>2</sup></td>
+                            <td>motin</td>
+                            <td>v0.3.9 (build-env plugin)</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/musicglue/dokku-user-env-compile">user-env-compile</a><sup>2</sup></td>
+                            <td>musicglue</td>
+                            <td>v0.3.9 (build-env plugin)</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/neam/dokku-nginx-vhosts-custom-configuration">VHOSTS Custom Configuration</a></td>
+                            <td>motin</td>
+                            <td>v0.3.10 (domains plugin)</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/ohardy/dokku-volume">Volume (persistent storage)</a></td>
+                            <td>ohardy</td>
+                            <td>v0.5.0 (storage plugin)</td>
+                          </tr>
+                        </tbody>
+                        </table>
+
+
+                        <h3>Complementos sin mantenimiento</h3>
+                        <p>Los siguientes complementos ya no son mantenidos por sus desarrolladores.</p>
+                        <table class="table table-hover" >
+                        <thead>
+                          <tr>
+                            <th>Plugin</th>
+                            <th>Author</th>
+                            <th>Compatibility</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><a href="https://github.com/mikecsh/dokku-app-url">app-url</a></td>
+                            <td>mikecsh</td>
+                            <td>Works with 0.2.0</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/fgrehm/chef-dokku">Chef cookbooks</a></td>
+                            <td>fgrehm</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/Flink/dokku-couchdb-multi-containers">CouchDB (multi containers)</a></td>
+                            <td>Flink</td>
+                            <td>0.4.0+</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/racehub/dokku-couchdb-plugin">CouchDB</a></td>
+                            <td>RaceHub</td>
+                            <td>Compatible with 0.2.0</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/alexkruegger/dokku-app-configfiles">Dokku Copy App Config Files</a></td>
+                            <td>alexkruegger</td>
+                            <td>Compatible with 0.3.17+</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/robv/dokku-elasticsearch">Elasticsearch</a></td>
+                            <td><a href="https://github.com/robv">robv</a></td>
+                            <td>Not compatible with &gt;= 0.3.0 (still uses /home/git)</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/blag/dokku-elasticsearch-plugin">Elasticsearch</a><sup>1</sup></td>
+                            <td>blag</td>
+                            <td>Compatible with 0.2.0</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/jlachowski/dokku-graphite-plugin">Graphite/statsd</a></td>
+                            <td>jlachowski</td>
+                            <td>&lt; 0.4.0</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/cef/dokku-hipchat">HipChat Notifications</a></td>
+                            <td>cef</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/Flink/dokku-memcached-plugin">Memcached</a></td>
+                            <td>Flink</td>
+                            <td>0.4.0+</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/jeffutter/dokku-mongodb-plugin">MongoDB (single container)</a></td>
+                            <td>jeffutter</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/hughfletcher/dokku-mysql-plugin">MySQL</a></td>
+                            <td>hughfletcher</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/Aomitayo/dokku-neo4j-plugin">Neo4j</a></td>
+                            <td>Aomitayo</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/fermuch/dokku-pg-plugin">PostGIS</a></td>
+                            <td>fermuch</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/jeffutter/dokku-postgresql-plugin">PostgreSQL (single container)</a></td>
+                            <td>jeffutter</td>
+                            <td>This plugin creates a single postgresql container that all your apps can use. Thus only one instance of postgresql running (good for servers without a ton of memory).</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/jeffutter/dokku-riakcs-plugin">RiakCS (single container)</a></td>
+                            <td>jeffutter</td>
+                            <td>Incompatible with 0.2.0 (checked at <a href="https://github.com/jeffutter/dokku-riakcs-plugin/commit/dccee02702e7001851917b7814e78a99148fb709">dccee02</a>)</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/luxifer/dokku-redis-plugin">Redis</a></td>
+                            <td>luxifer</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://github.com/sekjun9878/dokku-redis-plugin">Redis</a></td>
+                            <td>sekjun9878</td>
+                            <td>0.3.26+</td>
+                          </tr>
+                        </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!--<footer> Slice-ZC-2019</footer>-->
+
+
+
+<!-- JS Particles.js -->
+    
+    <script src="js/particles.min.js"></script>
+    <script src="js/app.js"></script>
+   
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	 <script src="js/funciones.js"></script>
+</body>
+</html>	

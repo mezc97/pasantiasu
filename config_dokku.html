@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+        
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="css/my_style.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa:700|Dancing+Script|Roboto&display=swap" rel="stylesheet">
+	<title>Configurando nombre de dominios</title>
+</head>
+<body>
+    <!-- ID Particles.js -->
+  <div id="particles-js"></div>
+	<div id="wrapper">
+   <div class="overlay"></div>
+    
+           <!-- Sidebar -->
+    <nav class="navbar navbar-inverse fixed-top" id="sidebar-wrapper" role="navigation">
+     <ul class="nav sidebar-nav">
+       <div class="sidebar-header">
+       <div class="sidebar-brand">
+         <a class="titulo" href="#">Documentación Servidores Cloud</a></div></div>
+       <li><a href="index.html">Home</a></li>
+       <li class="dropdown">
+       <a href="#works" class="dropdown-toggle"  data-toggle="dropdown">Dokku <span class="caret"></span></a>
+      <ul class="dropdown-menu animated fadeInLeft" role="menu">
+      <div class="#dropdown-header">Desplegar Apps en Dokku </div>
+      <li><a href="ini_rapido_dokku.html">Pasos para Desplegar rápido una app en dokku</a></li>
+      <li><a href="requerimientos_dokku.html">Requerimientos Minimos</a></li>
+      <li><a href="creando_app.html">Creando Aplicaciones</a></li>
+      <li><a href="plugins_dokku.html">Instalando Plugins</a></li>
+      <li><a href="config_dokku.html">Configurando nombres de dominios</a></li>
+      <li><a href="var_entornos_dokku.html">Estableciendo variables de entornos</a></li>
+      <li><a href="config_enlace_dokku.html">Configurar y enlazar plugins</a></li>
+      <li><a href="config_avanzada_dokku.html">Configuracion avanzada</a></li>
+      <li><a href="obt_rootpass_dokku.html">Obtener Root Password de los contenedores de servicios</a></li>
+      <li><a href="camb_adap_bd_dokku.html">Cambiando el tipo de adaptador de base de datos</a></li>
+      <li><a href="alm_persistente_dokku.html">Almacenamiento Persistente</a></li>
+      <li><a href="conect_deploy_dokku.html">Conectandonos a dokku para hacer Deploy</a></li>
+      <li><a href="mant_dokku.html">Mantenimiento a los servicios dokku</a></li>
+      </ul>
+      </li>
+       <!-- digital oceans-->
+       <li><a href="digitalOceans.html">Digital Oceans</a></li>
+       <!-- azure-->
+       <li><a href="azure.html">Azure</a></li>
+       <!-- Google Cloud-->
+       <li><a href="gc.html">Google Cloud</a></li>
+       <!-- AWS-->
+       <li><a href="aws.html">Amazon Web Services</a></li>
+       <!-- QUIZ-->
+       <li><a href="quiz/dist/index.html">Quiz</a></li>
+      </ul>
+  </nav>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        
+
+        <div id="contenido page-content-wrapper">
+            <button type="button" class="hamburger animated fadeInLeft is-closed" data-toggle="offcanvas">
+                <span class="hamb-top"></span>
+    			<span class="hamb-middle"></span>
+				<span class="hamb-bottom"></span>
+            </button>
+            <div class="container presentacion">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <h1>Configurando Nombres de Dominio</h1> 
+
+                             <h6>En dokku podemos asignar uno o varios dominios a nuestras apps. El servidor mapeara el dominio a una app que tu le indiques. Para asignar un dominio a una aplicación usa el siguiente comando:</h6>
+                             <div class="card">
+                                <div class="card-body"> 
+                                  <h6>dokku domains:add <<!---->app> <<!---->domain> </h6>
+                                </div>
+                             </div>
+                             <h6>“Domains” es un módulo de dokku donde podemos realizar administrar otras funciones de los dominios. Para más Info consulta su documentación aquí. Algunas de las diferentes funciones que podemos realizar se encuentran en los siguientes comandos:</h6>
+                             <div id="accordion">
+
+                  <div class="card">
+                    <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                    <div class="card-header">
+                      
+                        Muestra una lista de los dominios
+                      
+                    </div>
+                    </a>
+                    <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                      <div class="card-body">
+                        dokku domains:add <<!---->app> <<!---->domain>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+                    <div class="card-header">
+                      
+                        Añade un dominio a una app
+                      
+                    </div>
+                    </a>
+                    <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                      <div class="card-body">
+                        domains:add <<!---->app> <<!---->domain> [<<!---->domain> ...]          
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+                    <div class="card-header">
+                      
+                        Añade un dominio global
+                      
+                    </div>
+                    </a>
+                    <div id="collapseThree" class="collapse" data-parent="#accordion">
+                      <div class="card-body">
+                        domains:add-global <<!---->domain> [<<!---->domain> ...]         
+                      </div>
+                    </div>
+                  </div>
+                   <div class="card">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseFour">
+                    <div class="card-header">
+                      
+                        Elimina todos los dominio de una app
+                      
+                    </div>
+                    </a>
+                    <div id="collapseFour" class="collapse" data-parent="#accordion">
+                      <div class="card-body">
+                        domains:clear <<!---->app>                                            
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseFive">
+                    <div class="card-header">
+                      
+                        Deshabilita el soporte de VHOST
+                      
+                    </div>
+                    </a>
+                    <div id="collapseFive" class="collapse" data-parent="#accordion">
+                      <div class="card-body">
+                        domains:disable <<!---->app>                                                                              
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                     <a class="collapsed card-link" data-toggle="collapse" href="#collapseSix">
+                    <div class="card-header">
+                     
+                        Habilita el soporte de VHOST
+                      
+                    </div>
+                    </a>
+                    <div id="collapseSix" class="collapse" data-parent="#accordion">
+                      <div class="card-body">
+                        domains:enable <<!---->app>                                             
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseSeven">
+                    <div class="card-header">
+                      
+                        Remueve un dominio de una app
+                    
+                    </div>
+                    </a>
+                    <div id="collapseSeven" class="collapse" data-parent="#accordion">
+                      <div class="card-body">
+                        domains:remove <<!---->app> <<!---->domain> [<<!---->domain> ...]                                                    
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                     <a class="collapsed card-link" data-toggle="collapse" href="#collapse_Seven">
+                    <div class="card-header">
+                     
+                        Remueve un dominio global
+                      
+                    </div>
+                    </a>
+                    <div id="collapse_Seven" class="collapse" data-parent="#accordion">
+                      <div class="card-body">
+                        domains:remove-global < <!---->domain> [< <!---->domain> ...]                                                      
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#collapse_Seve">
+                    <div class="card-header">
+                      
+                        Establece dominio para una app
+                      
+                    </div>
+                    </a>
+                    <div id="collapse_Seve" class="collapse" data-parent="#accordion">
+                      <div class="card-body">
+                        ddomains:set <<!---->app> <<!---->domain> [<<!---->domain> ...]            ...]                                                      
+                      </div>
+                    </div>
+                  </div>
+                   <div class="card">
+                     <a class="collapsed card-link" data-toggle="collapse" href="#collapse_Sev">
+                    <div class="card-header">
+                     
+                        Establece dominio global para una app
+                      
+                    </div>
+                    </a>
+                    <div id="collapse_Sev" class="collapse" data-parent="#accordion">
+                      <div class="card-body">
+                        domains:set-global <<!---->domain> [<<!---->domain> ...]                                                                     
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                </div>
+
+
+                    
+               
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!--<footer> Slice-ZC-2019</footer>-->
+
+
+
+<!-- JS Particles.js -->
+    
+    <script src="js/particles.min.js"></script>
+    <script src="js/app.js"></script>
+   
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	 <script src="js/funciones.js"></script>
+</body>
+</html>	

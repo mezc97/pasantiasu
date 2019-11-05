@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+        
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css"/>
+  <link rel="stylesheet" type="text/css" href="css/my_style.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa:700|Dancing+Script|Roboto&display=swap" rel="stylesheet">
+  <title>AWS</title>
+</head>
+<body>
+    <!-- ID Particles.js -->
+  <div id="particles-js"></div>
+  <div id="wrapper">
+   <div class="overlay"></div>
+    
+          <!-- Sidebar -->
+    <nav class="navbar navbar-inverse fixed-top" id="sidebar-wrapper" role="navigation">
+     <ul class="nav sidebar-nav">
+       <div class="sidebar-header">
+       <div class="sidebar-brand">
+         <a class="titulo" href="#">Documentación Servidores Cloud</a></div></div>
+       <li><a href="index.html">Home</a></li>
+       <li class="dropdown">
+       <a href="#works" class="dropdown-toggle"  data-toggle="dropdown">Dokku <span class="caret"></span></a>
+      <ul class="dropdown-menu animated fadeInLeft" role="menu">
+      <div class="#dropdown-header">Desplegar Apps en Dokku </div>
+      <li><a href="ini_rapido_dokku.html">Pasos para Desplegar rápido una app en dokku</a></li>
+      <li><a href="requerimientos_dokku.html">Requerimientos Minimos</a></li>
+      <li><a href="creando_app.html">Creando Aplicaciones</a></li>
+      <li><a href="plugins_dokku.html">Instalando Plugins</a></li>
+      <li><a href="config_dokku.html">Configurando nombres de dominios</a></li>
+      <li><a href="var_entornos_dokku.html">Estableciendo variables de entornos</a></li>
+      <li><a href="config_enlace_dokku.html">Configurar y enlazar plugins</a></li>
+      <li><a href="config_avanzada_dokku.html">Configuracion avanzada</a></li>
+      <li><a href="obt_rootpass_dokku.html">Obtener Root Password de los contenedores de servicios</a></li>
+      <li><a href="camb_adap_bd_dokku.html">Cambiando el tipo de adaptador de base de datos</a></li>
+      <li><a href="alm_persistente_dokku.html">Almacenamiento Persistente</a></li>
+      <li><a href="conect_deploy_dokku.html">Conectandonos a dokku para hacer Deploy</a></li>
+      <li><a href="mant_dokku.html">Mantenimiento a los servicios dokku</a></li>
+      </ul>
+      </li>
+       <!-- digital oceans-->
+       <li><a href="digitalOceans.html">Digital Oceans</a></li>
+       <!-- azure-->
+       <li><a href="azure.html">Azure</a></li>
+       <!-- Google Cloud-->
+       <li><a href="gc.html">Google Cloud</a></li>
+       <!-- AWS-->
+       <li><a href="aws.html">Amazon Web Services</a></li>
+       <!-- QUIZ-->
+       <li><a href="quiz/dist/index.html">Quiz</a></li>
+      </ul>
+  </nav>
+        <!-- /#sidebar-wrapper -->
+        <!-- Page Content -->
+        <div id="contenido page-content-wrapper">
+            <button type="button" class="hamburger animated fadeInLeft is-closed" data-toggle="offcanvas">
+                <span class="hamb-top"></span>
+          <span class="hamb-middle"></span>
+        <span class="hamb-bottom"></span>
+            </button>
+            <div class="container presentacion">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 ">
+                        <h1>Amazon Web Server</h1> 
+                        <h2><strong>SERVIDORES CLOUD</strong></h2>
+                        <p>servidores vituales privados.</p>
+                        <div id="accordion">
+                        <div class="card">
+                          <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                          <div class="card-header">
+                            
+                              1. Inicie sesión en su cuenta en Amazon Web Services
+                           
+                          </div>
+                          </a>
+                          <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                            <div class="card-body">
+                              Crear una cuenta en <a href="https://azure.microsoft.com/es-es/">https://azure.microsoft.com/es-es/</a>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="card">
+                          <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+                          <div class="card-header">
+                            
+                              2. Instalación  
+                            
+                          </div>
+                          </a>
+                          <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                            <div class="card-body">
+                              <h6>a) Clonar el repo Dokku a su máquina local<br><strong>git clone git@github.com:dokku/dokku.git</strong></h6>
+                              <h6>b) Instalar <a href="https://www.vagrantup.com/">Vagrant</a><br><strong>brew cask install vagrant</strong></h6>
+                              <h6>c) Instale  <a href="https://www.virtualbox.org/">VirtualBox </a>para configurar Vagrant<br><strong>brew cask install virtualbox</strong></h6>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="card">
+                          <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+                          <div class="card-header">
+                            
+                              3. Configurar proyecto para Dokku
+                            
+                          </div>
+                          </a>
+                          <div id="collapseThree" class="collapse" data-parent="#accordion">
+                            <div class="card-body">
+                              Configure Dokku en su máquina Vagrant local:
+
+                              <h6>a) Cree la máquina virtual Vagrant cambiando el directorio a su repositorio local de Dokku<br><strong>cd /path/to/local/dokku</strong></h6>
+                              <h6>b) Crea una máquina virtual vagabunda con Dokku<br><strong>vagrant up</strong></h6>
+                              <h6>c) Desea establecer la IP local (el valor predeterminado es 10.0.0.2) de su máquina Vagrant en su /etc/hostsarchivo y elegir un nombre de host. Para este tutorial, usaremos el nombre de hostdokku.me<br><strong>10.0.0.2 dokku.me</strong></h6>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <a class="collapsed card-link" data-toggle="collapse" href="#collapseCuatro">
+                          <div class="card-header">
+                            
+                              4. Termine de configurar Dokku en su máquina Vagrant local
+                            
+                          </div>
+                          </a>
+                          <div id="collapseCuatro" class="collapse" data-parent="#accordion">
+                            <div class="card-body">
+                              <h6>a) Acceda <a href="http://dokku.me/">dokku.me</a> en su navegador.</h6>
+                              <img src="">
+                              <h6>b) Pegue su clave pública ssh, que se encuentra en <strong>~/.ssh/id_rsa.pub.</strong> Esta clave pública ssh debe ser la misma clave que usó para clonar la aplicación de ejemplo .</h6>
+                              <h6>c) Establecer <strong>Hostnameendokku.me</strong></h6>
+                              <h6>d) Marque <strong>Use virtualhost naming for apps</strong>Esto le permitirá acceder <strong><<!---->project-name>.dokku.me</strong></h6>
+                              <h6>e) Edite su /etc/hostsarchivo y agregue otro host <strong>10.0.0.2 express-example.dokku.me</strong></h6>
+                              <h6>f) Agregue la nueva instancia de Dokku como un git remoto a nuestra aplicación de ejemplo para que podamos comenzar a enviar cambios localmente a Dokku en nuestra máquina virtual Vagrant local <strong>git remote add local dokku@dokku.me:express-example</strong></h6>
+                              <h6>g) Realice un cambio en su vista en la aplicación de ejemplo Express y envíe sus cambios <strong>git push local master</strong></h6>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="card">
+                          <a class="collapsed card-link" data-toggle="collapse" href="#collapseCinco">
+                          <div class="card-header">
+                            
+                              5. Configurar AWS
+                            
+                          </div>
+                          </a>
+                          <div id="collapseCinco" class="collapse" data-parent="#accordion">
+                            <div class="card-body">
+                              <h6>a) Inicie una nueva instancia para EC2.</h6>
+                              <h6>b) Seleccione cualquier tipo de instancia. Para este tutorial, probablemente desee seleccionar el t2.microtipo, ya que es elegible para usuarios de nivel gratuito.</h6>
+                              <h6>c) Seleccione cualquier tipo de instancia. Para este tutorial, probablemente desee seleccionar el <strong> t2.microtipo</strong>, ya que es elegible para usuarios de nivel gratuito.</h6>
+                              <h6>Configure su grupo de seguridad agregando tipos:</h6>
+                              <h6>c.a) SSH en puerto 22</h6>
+                              <h6>c.b) HTTP en puerto 80</h6>
+                              <h6>c.c) También puede ser necesario agregar TCPun rango de puertos 20000-65535</h6>
+                              <h6>d) Inicie su nueva instancia y descargue el .pemarchivo para acceso ssh.</h6>
+                              <h6>Una vez que haya lanzado su instancia, obtenga su IP pública y agréguela a su /etc/hostsarchivo. Usaremos el nombre de hostdokku.aws.me <br><strong> <<!---->instance's public IP> dokku.aws.me</strong></h6>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="card">
+                          <a class="collapsed card-link" data-toggle="collapse" href="#collapseSeis">
+                          <div class="card-header">
+                            
+                              6. Configure Dokku en su instancia EC2
+                            
+                          </div>
+                          </a>
+                          <div id="collapseSeis" class="collapse" data-parent="#accordion">
+                            <div class="card-body">
+                              <h6>a) SSH en su instancia EC2<br><strong>ssh -i /path/to/file.pem ubuntu@dokku.aws.me</strong></h6>
+                              <h6>b) Instalar Dokku a través de wget <br><strong>wget https://raw.githubusercontent.com/progrium/dokku/v0.4.5/bootstrap.sh <br>sudo DOKKU_TAG=v0.4.5 bash</strong></h6>
+                              <h6>c) Una vez que Dokku esté instalado, acceda a <a href="http://dokku.aws.me/">dokku.aws.me</a> en su navegador.</h6>
+                              <h6>d) Pegue la misma clave pública ssh que antes, desde ~/.ssh/id_rsa.pub</h6>
+                              <h6>e) Establecer Hostnameendokku.aws.me</h6>
+                              <h6>f) Cheque Use virtualhost naming for apps</h6>
+                              <h6>g) Agregue otro nombre de host a su /etc/hostsarchivo.s <br><strong><<!---->instance's public IP> express-example.dokku.aws.me</strong></h6>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="card">
+                          <a class="collapsed card-link" data-toggle="collapse" href="#collapseSiete">
+                          <div class="card-header">
+                            
+                              7. configuración para Dokku 
+                            
+                          </div>
+                          </a>
+                          <div id="collapseSiete" class="collapse" data-parent="#accordion">
+                            <div class="card-body">
+                              <h6>a) Agregue la instancia EC2 como un git remoto a nuestra aplicación de ejemplo para que podamos comenzar a enviar cambios de forma remota a Dokku en nuestro servidor EC2 Ubuntu. <br><strong>git remote add aws dokku@dokku.aws.me:express-example</strong></h6>
+                              <h6>b) Realice un cambio en su vista en la aplicación de ejemplo Express y envíe sus cambios <br><strong>git push aws master</strong></h6>
+                            </div>
+                          </div>
+                        </div>
+
+                        
+                      </div>
+
+
+                        
+                        
+                             
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    
+
+
+<!-- JS Particles.js -->
+    
+    <script src="js/particles.min.js"></script>
+    <script src="js/app.js"></script>
+   
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+   <script src="js/funciones.js"></script>
+</body>
+</html> 

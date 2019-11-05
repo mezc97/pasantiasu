@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+        
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css"/>
+  <link rel="stylesheet" type="text/css" href="css/my_style.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa:700|Dancing+Script|Roboto&display=swap" rel="stylesheet">
+  <title>Digital Oceans</title>
+</head>
+<body>
+    <!-- ID Particles.js -->
+  <div id="particles-js"></div>
+  <div id="wrapper">
+   <div class="overlay"></div>
+    
+          <!-- Sidebar -->
+    <nav class="navbar navbar-inverse fixed-top" id="sidebar-wrapper" role="navigation">
+     <ul class="nav sidebar-nav">
+       <div class="sidebar-header">
+       <div class="sidebar-brand">
+         <a class="titulo"  href="#">Documentación Servidores Cloud</a></div></div>
+       <li><a href="index.html">Home</a></li>
+       <li class="dropdown">
+       <a href="#works" class="dropdown-toggle"  data-toggle="dropdown">Dokku <span class="caret"></span></a>
+      <ul class="dropdown-menu animated fadeInLeft" role="menu">
+      <div class="#dropdown-header">Desplegar Apps en Dokku </div>
+      <li><a href="ini_rapido_dokku.html">Pasos para Desplegar rápido una app en dokku</a></li>
+      <li><a href="requerimientos_dokku.html">Requerimientos Minimos</a></li>
+      <li><a href="creando_app.html">Creando Aplicaciones</a></li>
+      <li><a href="plugins_dokku.html">Instalando Plugins</a></li>
+      <li><a href="config_dokku.html">Configurando nombres de dominios</a></li>
+      <li><a href="var_entornos_dokku.html">Estableciendo variables de entornos</a></li>
+      <li><a href="config_enlace_dokku.html">Configurar y enlazar plugins</a></li>
+      <li><a href="config_avanzada_dokku.html">Configuracion avanzada</a></li>
+      <li><a href="obt_rootpass_dokku.html">Obtener Root Password de los contenedores de servicios</a></li>
+      <li><a href="camb_adap_bd_dokku.html">Cambiando el tipo de adaptador de base de datos</a></li>
+      <li><a href="alm_persistente_dokku.html">Almacenamiento Persistente</a></li>
+      <li><a href="conect_deploy_dokku.html">Conectandonos a dokku para hacer Deploy</a></li>
+      <li><a href="mant_dokku.html">Mantenimiento a los servicios dokku</a></li>
+      </ul>
+      </li>
+       <!-- digital oceans-->
+       <li><a href="digitalOceans.html">Digital Oceans</a></li>
+       <!-- azure-->
+       <li><a href="azure.html">Azure</a></li>
+       <!-- Google Cloud-->
+       <li><a href="gc.html">Google Cloud</a></li>
+       <!-- AWS-->
+       <li><a href="aws.html">Amazon Web Services</a></li>
+       <!-- QUIZ-->
+       <li><a href="quiz/dist/index.html">Quiz</a></li>
+      </ul>
+  </nav>
+        <!-- /#sidebar-wrapper -->
+        <!-- Page Content -->
+        
+
+        <div id="contenido page-content-wrapper">
+            <button type="button" class="hamburger animated fadeInLeft is-closed" data-toggle="offcanvas">
+                <span class="hamb-top"></span>
+          <span class="hamb-middle"></span>
+        <span class="hamb-bottom"></span>
+            </button>
+            <div class="container presentacion">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 ">
+                        <h1>Digital Oceans</h1> 
+                        <h2><strong>SERVIDORES CLOUD</strong></h2>
+                        <p>servidores vituales privados.</p>
+                        <div id="accordion">
+
+                          <div class="card">
+                            <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                            <div class="card-header">
+                              
+                                1. Inicie sesión en su cuenta de DigitalOcean 
+                              
+                            </div>
+                            </a>
+                            <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                              <div class="card-body">
+                                Crear una cuenta en <a href="https://cloud.digitalocean.com/registrations/new">https://cloud.digitalocean.com/registrations/new</a>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card">
+                            <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+                            <div class="card-header">
+                              
+                                2. Hacer clic en crear droplets 
+                             
+                            </div>
+                             </a>
+                            <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                              <div class="card-body">
+                                En digital Oceans una gota o droplets equivale a un servidor
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card">
+                            <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+                            <div class="card-header">
+                              
+                                3. En Elija una imagen
+                             
+                            </div>
+                             </a>
+                            <div id="collapseThree" class="collapse" data-parent="#accordion">
+                              <div class="card-body">
+                                Permite seleccionar : 
+                                <h6>1-seleccionar una distribución de so Linux </h6>
+                                <h6>2-se puede instalar una distribución de Linux con una aplicación</h6>
+                                <h6>3-o instalar una imagen basado en uno de tus respaldos</h6> 
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card">
+                            <a class="collapsed card-link" data-toggle="collapse" href="#collapseCuatro">
+                            <div class="card-header">
+                              
+                                4. En Elegir un tamaño , seleccione la especificación de su máquina
+                             
+                            </div>
+                             </a>
+                            <div id="collapseCuatro" class="collapse" data-parent="#accordion">
+                              <div class="card-body">
+                                Selecciona el tamaño del servidor dependiendo del proyecto, ademas permite la opcion de uso por hora
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card">
+                            <a class="collapsed card-link" data-toggle="collapse" href="#collapseCinco">
+                            <div class="card-header">
+                              
+                                5. En Elegir una región de centro de datos , seleccione su región.
+                              
+                            </div>
+                            </a>
+                            <div id="collapseCinco" class="collapse" data-parent="#accordion">
+                              <div class="card-body">
+                                Seleccionar donde se ubicara el servidor
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card">
+                            <a class="collapsed card-link" data-toggle="collapse" href="#collapseSeis">
+                            <div class="card-header">
+                              
+                                6. Agregue una clave SSH.
+                             
+                            </div>
+                             </a>
+                            <div id="collapseSeis" class="collapse" data-parent="#accordion">
+                              <div class="card-body">
+                                <h6><strong>Para nuevas llaves</strong></h6>
+                                <h6>1. En Agregar sus claves SSH, haga clic en Nueva clave SSH (esto abre un cuadro de diálogo) .</h6>
+                                <h6>2. Desde su terminal, ejecute cat $HOME/.ssh/id_rsa.pub.</h6>
+                                <h6>3. Copie el resultado y péguelo en el cuadro de diálogo Nueva clave SSH , proporcione un nombre y haga clic en Agregar clave SSH .</h6>
+                                <h6><strong>Para llaves existentes</strong></h6>
+                                <h6>Simplemente agregue una marca de verificación junto a las claves existentes que desea agregar.</h6>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card">
+                            <a class="collapsed card-link" data-toggle="collapse" href="#collapseSiete">
+                            <div class="card-header">
+                              
+                                7. En Finalizar y crear , asigne a su Droplet un nombre de host (no obligatorio) y haga clic en Crear .
+                             
+                            </div>
+                             </a>
+                            <div id="collapseSiete" class="collapse" data-parent="#accordion">
+                              <div class="card-body">
+                                ...
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card">
+                            <a class="collapsed card-link" data-toggle="collapse" href="#collapseOcho">
+                            <div class="card-header">
+                              
+                                8. Una vez creado, copie la dirección IP en su portapapeles.
+                             
+                            </div>
+                            </a>
+                            <div id="collapseOcho" class="collapse" data-parent="#accordion">
+                              <div class="card-body">
+                                ...
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card">
+                            <a class="collapsed card-link" data-toggle="collapse" href="#collapseNueve">
+                            <div class="card-header">
+                             
+                                9. En un navegador, vaya a la dirección IP que copió anteriormente y complete el formulario presentado para completar la configuración. De lo contrario, puede permitir que otros reconfiguren el acceso SSH en su servidor.
+                              
+                            </div>
+                            </a>
+                            <div id="collapseNueve" class="collapse" data-parent="#accordion">
+                              <div class="card-body">
+                                ...
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card">
+                            <a class="collapsed card-link" data-toggle="collapse" href="#collapseDiez">
+                            <div class="card-header">
+                              
+                                10. Ahora accedemos a nuestro servidor para prepararlo a la aplicación que recibirá después
+                             
+                            </div>
+                             </a>
+                            <div id="collapseDiez" class="collapse" data-parent="#accordion">
+                              <div class="card-body">
+                                <h6>a) Usamos el comando</h6> 
+                                <h6><strong>Ssh root@nuestraIp</strong></h6>
+                                <h6>b) Cuando entremos en el servidor usaremos el comando</h6>
+                                <h6><strong>Dokku apps:create nombreDeLaAppicacion</strong></h6>
+                                <h6>d) Procederemos a instalar el plugins de la base de datos</h6>
+                                <h6><strong>Sudo dokku plugin:install http:/…Direccion donde se encuentra el plugins</strong></h6>
+                                <h6>e) Luego crearemos el servicio de la base de datos </h6>
+                                <h6><strong>Dokku gestorDeBaseDeDatos:créate nombreDeLaApps-database</strong></h6>
+                                <h6>f) Ahora queremos unir la base de datos con  la aplicación</h6>
+                                <h6><strong>Dokku gestorDeBaseDeDatos:link nombreDelServicio nombreDeLaApp</strong></h6>
+                                <h6>g) Salimos del Servidor</h6>
+                                <h6><strong>exit logout</strong></h6>
+                                <h6><strong>closed</strong></h6>
+
+                              </div>
+                            </div>
+                          </div>
+
+                           <div class="card">
+                            <a class="collapsed card-link" data-toggle="collapse" href="#collapseOnce">
+                            <div class="card-header">
+                              
+                                11. Ultimos pasos
+                              
+                            </div>
+                            </a>
+                            <div id="collapseOnce" class="collapse" data-parent="#accordion">
+                              <div class="card-body">
+                               <h6>a) Colocamos el proyecto en una carpeta</h6>
+                               <h6>b) Entramos al directorio donde se encuentra nuestra aplicación </h6>
+                               <h6>c) Instalamos el remoto para subir la aplicación </h6>
+                               <h6>d) Para instalar la aplicación corremos el comando git push doku master</h6>
+                               <h6>e) Allí se muestra el ip y el puerto</h6>
+                               <h6>f) Ahora accedemos al navegador con la url que se muestra anteriormente</h6>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+
+                        
+                        
+                             
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    
+
+
+<!-- JS Particles.js -->
+    
+    <script src="js/particles.min.js"></script>
+    <script src="js/app.js"></script>
+   
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+   <script src="js/funciones.js"></script>
+</body>
+</html> 

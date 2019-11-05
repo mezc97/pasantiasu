@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+        
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css"/>
+  <link rel="stylesheet" type="text/css" href="css/my_style.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa:700|Dancing+Script|Roboto&display=swap" rel="stylesheet">
+  <title>Azure</title>
+</head>
+<body>
+    <!-- ID Particles.js -->
+  <div id="particles-js"></div>
+  <div id="wrapper">
+   <div class="overlay"></div>
+    
+          <!-- Sidebar -->
+    <nav class="navbar navbar-inverse fixed-top" id="sidebar-wrapper" role="navigation">
+     <ul class="nav sidebar-nav">
+       <div class="sidebar-header">
+       <div class="sidebar-brand">
+         <a class="titulo" href="#">Documentación Servidores Cloud</a></div></div>
+       <li><a href="index.html">Home</a></li>
+       <li class="dropdown">
+       <a href="#works" class="dropdown-toggle"  data-toggle="dropdown">Dokku <span class="caret"></span></a>
+      <ul class="dropdown-menu animated fadeInLeft" role="menu">
+      <div class="#dropdown-header">Desplegar Apps en Dokku </div>
+      <li><a href="ini_rapido_dokku.html">Pasos para Desplegar rápido una app en dokku</a></li>
+      <li><a href="requerimientos_dokku.html">Requerimientos Minimos</a></li>
+      <li><a href="creando_app.html">Creando Aplicaciones</a></li>
+      <li><a href="plugins_dokku.html">Instalando Plugins</a></li>
+      <li><a href="config_dokku.html">Configurando nombres de dominios</a></li>
+      <li><a href="var_entornos_dokku.html">Estableciendo variables de entornos</a></li>
+      <li><a href="config_enlace_dokku.html">Configurar y enlazar plugins</a></li>
+      <li><a href="config_avanzada_dokku.html">Configuracion avanzada</a></li>
+      <li><a href="obt_rootpass_dokku.html">Obtener Root Password de los contenedores de servicios</a></li>
+      <li><a href="camb_adap_bd_dokku.html">Cambiando el tipo de adaptador de base de datos</a></li>
+      <li><a href="alm_persistente_dokku.html">Almacenamiento Persistente</a></li>
+      <li><a href="conect_deploy_dokku.html">Conectandonos a dokku para hacer Deploy</a></li>
+      <li><a href="mant_dokku.html">Mantenimiento a los servicios dokku</a></li>
+      </ul>
+      </li>
+       <!-- digital oceans-->
+       <li><a href="digitalOceans.html">Digital Oceans</a></li>
+       <!-- azure-->
+       <li><a href="azure.html">Azure</a></li>
+       <!-- Google Cloud-->
+       <li><a href="gc.html">Google Cloud</a></li>
+       <!-- AWS-->
+       <li><a href="aws.html">Amazon Web Services</a></li>
+       <!-- QUIZ-->
+       <li><a href="quiz/dist/index.html">Quiz</a></li>
+      </ul>
+  </nav>
+        <!-- /#sidebar-wrapper -->
+        <!-- Page Content -->
+        
+
+        <div id="contenido page-content-wrapper">
+            <button type="button" class="hamburger animated fadeInLeft is-closed" data-toggle="offcanvas">
+                <span class="hamb-top"></span>
+          <span class="hamb-middle"></span>
+        <span class="hamb-bottom"></span>
+            </button>
+            <div class="container presentacion">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 ">
+                        <h1>Azure</h1> 
+                        <h2><strong>SERVIDORES CLOUD</strong></h2>
+                        <p>servidores vituales privados.</p>
+                        <div id="accordion">
+
+  <div class="card">
+    <a class="card-link" data-toggle="collapse" href="#collapseOne">
+    <div class="card-header">
+      
+        1. Crea una cuenta e inicie sesión con Azure 
+      
+    </div>
+    </a>
+    <div id="collapseOne" class="collapse show" data-parent="#accordion">
+      <div class="card-body">
+        Ingresa en la pagina <a href="https://azure.microsoft.com/es-es/">https://azure.microsoft.com/es-es/</a> y registrese o inicie sesion 
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+    <div class="card-header">
+      
+        2. Hacer clic en crear un recurso
+      
+    </div>
+    </a>
+    <div id="collapseTwo" class="collapse" data-parent="#accordion">
+      <div class="card-body">
+        En el menu que se genera selecionar App Web
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+     <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+    <div class="card-header">
+     
+        3. Configuraciones
+     
+    </div>
+    </a>
+    <div id="collapseThree" class="collapse" data-parent="#accordion">
+      <div class="card-body">
+        Establece : 
+        <h6>a) Nombre de la app web</h6>
+        <h6>b) Suscriptor(Predeterminado)</h6>
+        <h6>c) Selecciona Sistema Operativo <strong>Windows - Linux - Docker</strong></h6> 
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <a class="collapsed card-link" data-toggle="collapse" href="#collapseCuatro">
+    <div class="card-header">
+      
+        4. Seleccionar Plan
+      
+    </div>
+    </a>
+    <div id="collapseCuatro" class="collapse" data-parent="#accordion">
+      <div class="card-body">
+        <h6>Se puede seleccionar uno que se ha usado anteriomente</h6>
+        <h6>Se puede Crear un nuevo plan que se adapte a las necesidades</h6>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <a class="collapsed card-link" data-toggle="collapse" href="#collapseCinco">
+    <div class="card-header">
+      
+        5. Crear!
+      
+    </div>
+    </a>
+    <div id="collapseCinco" class="collapse" data-parent="#accordion">
+      <div class="card-body">
+        hacemos clic en crear
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <a class="collapsed card-link" data-toggle="collapse" href="#collapseSeis">
+    <div class="card-header">
+      
+        6. Configuración de la conexión
+      
+    </div>
+    </a>
+    <div id="collapseSeis" class="collapse" data-parent="#accordion">
+      <div class="card-body">
+        <h6><strong>Clic en deployment option </strong></h6>
+        <h6>Seleccionamos la fuente : Dropbox, GitHub, entre otros .</h6>
+        <h6><strong>Clic en deployment credencial</strong></h6>
+        <h6>colocamos usuario y password</h6>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <a class="collapsed card-link" data-toggle="collapse" href="#collapseSiete">
+    <div class="card-header">
+      
+        7. Conectarse a git(si se ha seleccionado este metodo)
+      
+    </div>
+    </a>
+    <div id="collapseSiete" class="collapse" data-parent="#accordion">
+      <div class="card-body">
+        <h6>1. Accedemos al CMD</h6>
+        <h6>2. Ubicamos la direccion de la carpeta local del proyecto para crear repositorio</h6>
+        <h6>3. En la CMD usamos el comando <strong>git init</strong></h6>
+        <h6>4. Para agregar el repositorio <strong>git add</strong></h6>
+        <h6>5. Creamos el commit <strong>git commit –m “nombreDelCommit”</strong></h6>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <a class="collapsed card-link" data-toggle="collapse" href="#collapseOcho">
+    <div class="card-header">
+      
+        8. Conectar Pagina con Azure
+      
+    </div>
+    </a>
+    <div id="collapseOcho" class="collapse" data-parent="#accordion">
+      <div class="card-body">
+        <h6>a) Para comprobar que ya tenemos el remoto colocamos <strong>git remote –v</strong></h6>
+        <h6>b) Para hacer push <strong>git push origin master</strong>(es master al ser la primera rama)</h6>
+      </div>
+    </div>
+  </div>
+
+  
+
+
+
+
+</div>
+
+
+                        
+                        
+                             
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    
+
+
+<!-- JS Particles.js -->
+    
+    <script src="js/particles.min.js"></script>
+    <script src="js/app.js"></script>
+   
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+   <script src="js/funciones.js"></script>
+</body>
+</html> 
